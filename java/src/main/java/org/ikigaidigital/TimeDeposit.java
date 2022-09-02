@@ -1,13 +1,13 @@
 package org.ikigaidigital;
 
 public class TimeDeposit {
-    public String name;
-    public Double balance;
-    public int daysSinceDeposited;
+    public String n;
+    public Double b;
+    public int days;
 
-    public TimeDeposit(String name, Double balance, int daysSinceDeposited) {
-        this.name = name;
-        this.balance = balance;
-        this.daysSinceDeposited = daysSinceDeposited;
+    public TimeDeposit(String n, Double b, int days) {
+        this.n = n;
+        this.b = b;
+        this.days = days;
     }
 }

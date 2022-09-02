@@ -8,10 +8,11 @@ We were able to savage only a portion of the business requirements, but we're no
 - The system should calculate the monthly interest based on the account type.
 - No interest will be added to any time deposit plans for the first 30 days. 
 - There are 4 types of time deposit plans available within the bank: basic, student, premium, and internal
-  - basic plan: 0.5%
+  - basic plan: 1%
+  - student plan: 3%
+  - premium plan: 5%
   - internal(employee) plan: 10%
-- The basic and student time deposit plan will terminate upon maturity. Upon termination, the student time deposit plan will reward the client with 1 additional month of interest. 
-- The internal will auto-renew upon maturity and will only terminate if the employee decides to leave the company. 
+- Aside from the internal plan, which follows an auto-renewal strategy, all existing time deposit plans should be terminated after 1 year. After the plan is terminated, the balance of the time deposit account should become 0 as the funds will automatically be transferred to their savings account. 
 
 We'd like for you to refactor the solution and ensure that the implementation meets all of the above requirements. As the code is already running on production, please ensure that no existing functionalities are broken.
 
