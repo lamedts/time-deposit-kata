@@ -17,5 +17,5 @@ We were able to savage only a portion of the business requirements, but we're no
 We'd like for you to refactor the solution and ensure that the implementation meets all of the above requirements. As the code is already running on production, please ensure that no existing functionalities are broken.
 
 Limitations: 
-- You may not add or take away from the TimeDeposit class, but you can rename the variables if needed
+- You may not add any additional methods to the TimeDeposit class
 - You may not modify the calculateInterest method signature
