@@ -13,7 +13,7 @@ public class TimeDepositCalculator {
                         a += xs.get(i).b * 0.03;
                     }
                 } else if (xs.get(i).n == "premium") {
-                    if (xs.get(i).days > 30) {
+                    if (xs.get(i).days > 45) {
                         a += xs.get(i).b * 0.05;
                     }
                 } else if (xs.get(i).n == "internal") {
