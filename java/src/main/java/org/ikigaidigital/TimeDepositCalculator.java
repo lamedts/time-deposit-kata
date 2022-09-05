@@ -17,7 +17,7 @@ public class TimeDepositCalculator {
                         a += xs.get(i).b * 0.05 / 12;
                     }
                 } else if (xs.get(i).n == "internal") {
-                    a += xs.get(i).b * 0.1;
+                    a += xs.get(i).b * 0.1 / 12;
                 } else if (xs.get(i).n == "basic") {
                     a += xs.get(i).b * 0.01 / 12;
                 }
