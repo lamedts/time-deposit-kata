@@ -11,7 +11,7 @@ public class TimeDepositCalculatorTest {
     public void calculateInterest_Test() {
         TimeDepositCalculator calc = new TimeDepositCalculator();
         List<TimeDeposit> plans = Arrays.asList(
-            new TimeDeposit("basic", 10.0, 45)
+            new TimeDeposit("basic", 1234567.00, 45)
         );
         calc.calculateInterest(plans);
 
