@@ -5,28 +5,34 @@ import java.math.RoundingMode;
 import java.util.List;
 
 public class TimeDepositCalculator {
-    public void calculateInterest(List<TimeDeposit> xs) {
-        for (int i = 0; i < xs.size(); i++) {
-            double a = 0;
 
-            if (xs.get(i).days > 30) {
-                if (xs.get(i).n == "student") {
-                    if (xs.get(i).days < 366) {
-                        a += xs.get(i).b * 0.03 / 12;
+    public double calculateInterest(TimeDeposit timeDeposit) {
+            double interest = 0;
+            if (timeDeposit.days > 30) {
+                if (timeDeposit.n.equalsIgnoreCase("student")) {
+                    if (timeDeposit.days < 366) {
+                        interest += timeDeposit.b * 0.03 / 12;
                     }
-                } else if (xs.get(i).n == "premium") {
-                    if (xs.get(i).days > 45) {
-                        a += xs.get(i).b * 0.05 / 12;
+                } else if (timeDeposit.n.equalsIgnoreCase("premium")) {
+                    if (timeDeposit.days > 45) {
+                        interest += timeDeposit.b * 0.05 / 12;
                     }
-                } else if (xs.get(i).n == "internal") {
-                    a += xs.get(i).b * 0.1 / 12;
-                } else if (xs.get(i).n == "basic") {
-                    a += xs.get(i).b * 0.01 / 12;
+                } else if (timeDeposit.n.equalsIgnoreCase("internal")) {
+                    interest += timeDeposit.b * 0.1 / 12;
+                } else if (timeDeposit.n.equalsIgnoreCase("basic")) {
+                    interest += timeDeposit.b * 0.01 / 12;
                 }
             }
+            return interest;
+    }
 
-            BigDecimal a2d = new BigDecimal(a).setScale(2, RoundingMode.HALF_UP);
-            xs.get(i).b += a2d.doubleValue();
+    public void calculateAmount(List<TimeDeposit> xs) {
+        for (TimeDeposit timeDeposit : xs) {
+            timeDeposit.b += scaleUp(calculateInterest(timeDeposit));
         }
+    }
+
+    public double scaleUp(Double amount) {
+        return BigDecimal.valueOf(amount).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 }
