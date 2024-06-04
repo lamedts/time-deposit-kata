@@ -9,8 +9,5 @@
         <module name="time-deposit-kata" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="time-deposit-kata" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
